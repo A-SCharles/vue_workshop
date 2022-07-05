@@ -1,0 +1,56 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue Click</title>
+</head>
+
+<body>
+    <style>
+        #app div {
+            margin: 5px 10px;
+        }
+
+        .box {
+            width: 100px;
+            height: 100px;
+            text-align: center;
+            background-color: bisque;
+            display: inline-block;
+            margin: 20px;
+            padding: 20px;
+        }
+    </style>
+
+    <h1>Hello</h1>
+    <div id="app">
+        <div v-if="showBooks">
+            <p>{{title}} - {{author}} - {{age}}</p>
+            <button v-on:click="age++">Increase</button>
+            <button v-on:click="age--">Decrease</button>
+        </div>
+
+        <button @click="toggleShowBooks">
+            <span v-if="showBooks">Hide Books</span>
+            <span v-else>Show Books</span>
+        </button>
+
+        <br>
+
+        <!-- Mouse Event -->
+        <div class="box" @mouseover="eventHandle">mouseover (enter)</div>
+        <div class="box" @mouseleave="eventHandle">mouseleave</div>
+        <div class="box" @dblclick="eventHandle">Double Click</div>
+        <div class="box" @mousemove="handleMouseMove">Position: {{x}} = {{y}}</div>
+    </div>
+
+    <!-- Vue Script -->
+    <script src="https://unpkg.com/vue@next"></script>
+
+    <!-- My JS -->
+    <script src="./script/script.js"></script>
+</body>
+
+</html>

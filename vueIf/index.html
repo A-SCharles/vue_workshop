@@ -1,0 +1,47 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue Click</title>
+</head>
+
+<body>
+    <style>
+        #app div {
+            margin: 5px 10px;
+        }
+    </style>
+
+    <h1>Hello</h1>
+    <div id="app">
+        <div v-if="showBooks">
+            <p>{{title}} - {{author}} - {{age}}</p>
+            <button v-on:click="age++">Increase</button>
+            <button v-on:click="age--">Decrease</button>
+        </div>
+        <button @click="toggleShowBooks">
+            <!-- Way 1 -->
+            <!-- <span v-if="showBooks">Hide Books</span>
+            <span v-if="!showBooks">Show Books</span> -->
+            
+            <!-- Way 2 -->
+            <!-- <span v-if="showBooks == true">Hide Books</span>
+            <span v-if="showBooks == false">Show Books</span> -->
+
+            <!-- Way 3 -->
+            <span v-if="showBooks">Hide Books</span>
+            <span v-else>Show Books</span>
+        </button>
+        <!-- <div @click="changeTitle('New title')">Click ME!</div> -->
+    </div>
+
+    <!-- Vue Script -->
+    <script src="https://unpkg.com/vue@next"></script>
+
+    <!-- My JS -->
+    <script src="./script/script.js"></script>
+</body>
+
+</html>
